@@ -1,6 +1,6 @@
 This is a parsing tool that will take a set config file and turn it into a useable JSON object.
 
-Live App: 
+Live App: Heroku
 
 Example Valid Config File:
 
