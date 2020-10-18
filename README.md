@@ -1,6 +1,6 @@
 This is a parsing tool that will take a set config file and turn it into a useable JSON object.
 
-Live App: Heroku
+Live App: https://parser-tool.vercel.app/
 
 Example Valid Config File:
 
