@@ -4,9 +4,9 @@ Live App: https://parser-tool.vercel.app/
 
 Example Valid Config File:
 
-# This is what a comment looks like, ignore it
+\# This is what a comment looks like, ignore it
 
-# All these config lines are valid
+\# All these config lines are valid
 
 host = test.com
 
@@ -16,7 +16,7 @@ server_load_alarm=2.5
 
 user= user
 
-# comment can appear here as well
+\# comment can appear here as well
 
 verbose =true
 
