@@ -2,7 +2,7 @@ This is a parsing tool that will take a set config file and turn it into a useab
 
 Live App: https://parser-tool.vercel.app/
 
-Example Valid Config File:
+# Example Valid Config File:
 
 \# This is what a comment looks like, ignore it
 

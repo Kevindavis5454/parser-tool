@@ -1,5 +1,7 @@
 import React from 'react';
 import "./main.css";
+import validText from "./configValid"
+import invalidText from "./configInvalid"
 
 class App extends React.Component {
 
@@ -104,20 +106,52 @@ clearTextInput = () => {
   document.getElementById("original-config-file").value = ""
 }
 
+readFile = () => {
+  let file = document.getElementById("myFile").files[0];
+  let reader = new FileReader();
+  reader.onload = function (e) {
+    let textArea = document.getElementById("original-config-file");
+    textArea.value = e.target.result;
+  };
+reader.readAsText(file);
+}
+
+validFile = () => {
+  document.getElementById("original-config-file").value = validText
+}
+
+invalidFile = () => {
+  document.getElementById("original-config-file").value = invalidText
+}
+
   render () {
     return(
         <div className="main-div">
           <div className="top-wrapper">
             <div className="config-div">
-              <textarea type="text" id="original-config-file"></textarea>
-              <button onClick={this.parseConfig} id="parse-button">Parse</button>
-              <button onClick={this.clearTextInput} id="clear-button">Clear</button>
+              <div className="text-wrapper">
+                <textarea type="text" id="original-config-file"></textarea>
+              </div>
+              <div className="button-div">
+                <div className="top-button-wrapper">
+                  <button onClick={this.parseConfig} className="button-left">Parse File</button>
+                  <button onClick={this.clearTextInput} className="button-left">Clear File</button>
+                </div> 
+                <div className="middle-button-wrapper">
+                  <button onClick={this.validFile} className="button-left">Valid Config File</button>
+                  <button onClick={this.invalidFile} className="button-left">Invalid Config File</button>
+                </div>
+                <div className="bottom-button-wrapper">
+                  <input id="myFile" className="button-left" type="file"/>
+                  <button onClick={this.readFile} className="button-left">Load File</button>
+                </div>             
+              </div>
             </div>
             <div id="output-div">
               <textarea id="output-text">
               </textarea>
-                <button onClick={this.copyToClipboard} id="clipboard-button">Copy to Clipboard</button>
-                <button onClick={this.clearTextOutput} id="clear-button">Clear</button>
+                <button onClick={this.copyToClipboard} className="button-right">Copy to Clipboard</button>
+                <button onClick={this.clearTextOutput} className="button-right">Clear</button>
               
             </div>
         </div>
